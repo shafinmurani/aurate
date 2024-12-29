@@ -14,7 +14,7 @@ class _ContinueWithGoogleState extends State<ContinueWithGoogle> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // google login logic
+        AuthServices().googleSigIn();
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 240, 239, 239),

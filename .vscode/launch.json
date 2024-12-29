@@ -4,7 +4,6 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-    
     {
       "name": "aurate",
       "request": "launch",
@@ -15,6 +14,12 @@
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
+    },
+    {
+      "name": "aurate (debug mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug"
     },
     {
       "name": "aurate (release mode)",
