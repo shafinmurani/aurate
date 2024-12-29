@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../export.dart';
 
@@ -15,12 +16,12 @@ class _HomescreenState extends State<Homescreen> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           SizedBox(
             height: 32,
           ),
           Text(
-            'Hello, [User]',
+            'Hello, ${FirebaseAuth.instance.currentUser?.displayName}',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           ),
           SizedBox(
