@@ -21,7 +21,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
             child: CircularProgressIndicator(),
           );
         } else if (snapshot.hasData) {
-          return const Homescreen();
+          return const NavigationWrapper();
         } else {
           return const AuthPage();
         }
