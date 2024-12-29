@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554325131943",
+    "project_id": "aurate-719f6",
+    "storage_bucket": "aurate-719f6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554325131943:android:0918d89ad51c5e0ba75182",
+        "android_client_info": {
+          "package_name": "com.highseas.aurate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGyQuuDvk9w0xvwMvThwe05RfaIZdcTCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
