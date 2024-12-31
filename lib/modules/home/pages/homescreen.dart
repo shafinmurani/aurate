@@ -12,41 +12,50 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 32,
-          ),
-          Text(
-            'Hello, ${FirebaseAuth.instance.currentUser?.displayName}',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          TodaysSale(),
-          SizedBox(
-            height: 12,
-          ),
-          Text(
-            'Live Prices',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          Row(
-            spacing: 16.0,
-            children: [
-              LivePrices(),
-              LivePrices(),
-            ],
-          ),
-          //TODO:graph here
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Aurate'),
+        centerTitle: true,
+        actions: [
+          IconButton(icon: const Icon(Icons.history), onPressed: () {}),
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 32,
+            ),
+            Text(
+              'Hello, ${FirebaseAuth.instance.currentUser?.displayName}',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            TodaysSale(),
+            SizedBox(
+              height: 12,
+            ),
+            Text(
+              'Live Prices',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Row(
+              spacing: 16.0,
+              children: [
+                LivePrices(),
+                LivePrices(),
+              ],
+            ),
+            //TODO:graph here
+          ],
+        ),
       ),
     );
   }
