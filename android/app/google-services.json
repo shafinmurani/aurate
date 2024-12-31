@@ -12,7 +12,20 @@
           "package_name": "com.highseas.aurate"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "554325131943-dm2jrpdor84vvl0a48nlpgu7p280cnkh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.highseas.aurate",
+            "certificate_hash": "f4ed99894daa7032e56b3065e36d637c7be92f7b"
+          }
+        },
+        {
+          "client_id": "554325131943-ms8djqm3089gvsk0nq6fsi9g2jrebgs8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBGyQuuDvk9w0xvwMvThwe05RfaIZdcTCw"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554325131943-ms8djqm3089gvsk0nq6fsi9g2jrebgs8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

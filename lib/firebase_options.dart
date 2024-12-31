@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'aurate-719f6',
     storageBucket: 'aurate-719f6.firebasestorage.app',
   );
+
 }
