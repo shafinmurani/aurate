@@ -16,10 +16,22 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Aurate'),
+        title: const Text(
+          'Aurate',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
         actions: [
-          IconButton(icon: const Icon(Icons.history), onPressed: () {}),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: IconButton(
+              icon: const Icon(Icons.history),
+              onPressed: () {},
+              iconSize: 28.0,
+            ),
+          ),
         ],
       ),
       body: Padding(
@@ -49,21 +61,21 @@ class _HomescreenState extends State<Homescreen> {
               height: 12,
             ),
             FutureBuilder(
-            future: scraper.scrapeGoldRates(),
-            builder: (context, snapshot) {
-              return Row(
+              future: scraper.scrapeGoldRates(),
+              builder: (context, snapshot) {
+                return Row(
                   spacing: 16.0,
                   children: [
                     LivePrices(
-                    goldRate: snapshot.data?.first,
-                  ),
+                      goldRate: snapshot.data?.first,
+                    ),
                     LivePrices(
-                    goldRate: snapshot.data?.last,
-                  ),
+                      goldRate: snapshot.data?.last,
+                    ),
                   ],
                 );
-            },
-          ),
+              },
+            ),
             //TODO:graph here
           ],
         ),
