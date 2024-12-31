@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../../export.dart';
 
 class Homescreen extends StatefulWidget {
@@ -10,6 +11,8 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  final scraper = GoldRateScraper();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,19 +43,28 @@ class _HomescreenState extends State<Homescreen> {
               height: 12,
             ),
             Text(
-              'Live Prices',
+              'Live Gold Rates',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 12,
             ),
-            Row(
-              spacing: 16.0,
-              children: [
-                LivePrices(),
-                LivePrices(),
-              ],
-            ),
+            FutureBuilder(
+            future: scraper.scrapeGoldRates(),
+            builder: (context, snapshot) {
+              return Row(
+                  spacing: 16.0,
+                  children: [
+                    LivePrices(
+                    goldRate: snapshot.data?.first,
+                  ),
+                    LivePrices(
+                    goldRate: snapshot.data?.last,
+                  ),
+                  ],
+                );
+            },
+          ),
             //TODO:graph here
           ],
         ),
