@@ -47,7 +47,6 @@ class GoldRateScraper {
         );
       }).toList();
     } catch (e) {
-      print('Error: $e');
       return [];
     }
   }
@@ -64,10 +63,9 @@ class GoldRateScraper {
 
     if (goldRates.isNotEmpty) {
       await writeJsonFile(goldRates);
-      print('Found Gold Rates:');
-      goldRates.forEach((rate) => print(rate.toJson()));
     } else {
-      print('Failed to retrieve gold rates');
+      // print('Failed to retrieve gold rates');
+      // TODO: Add error handling logic here
     }
   }
 }
