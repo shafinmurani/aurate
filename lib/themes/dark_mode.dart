@@ -9,7 +9,11 @@ ThemeData darkTheme = ThemeData(
     inversePrimary: Colors.grey.shade300,
   ),
   dialogTheme: DialogTheme(
-    titleTextStyle: TextStyle(color: const Color(0xFFE0E0E0)),
+    titleTextStyle: TextStyle(
+      color: const Color(0xFFE0E0E0),
+      fontSize: 25,
+      fontWeight: FontWeight.w600,
+    ),
     contentTextStyle: TextStyle(color: const Color(0xFFE0E0E0)),
     backgroundColor: const Color(0xFF212121),
   ),

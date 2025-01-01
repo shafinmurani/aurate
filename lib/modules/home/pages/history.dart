@@ -14,10 +14,12 @@ class _HistoryState extends State<History> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: const Text('History',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            )),
+        title: const Text(
+          'History',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
