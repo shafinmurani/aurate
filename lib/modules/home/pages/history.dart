@@ -12,10 +12,10 @@ class _HistoryState extends State<History> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: const Text('History',
             style: TextStyle(
-              color: Colors.black,
               fontWeight: FontWeight.bold,
             )),
         centerTitle: true,

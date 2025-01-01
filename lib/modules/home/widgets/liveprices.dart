@@ -16,7 +16,7 @@ class _LivePricesState extends State<LivePrices> {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.secondary,
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
@@ -31,14 +31,14 @@ class _LivePricesState extends State<LivePrices> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
-                        color: Colors.black,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                     Text('₹${widget.goldRate?.ratePerTenGm} / 10gm',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: Colors.black,
+                          color: Theme.of(context).colorScheme.primary,
                         )),
                   ],
           ),

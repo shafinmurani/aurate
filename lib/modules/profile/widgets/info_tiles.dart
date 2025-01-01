@@ -25,19 +25,19 @@ class _InfoTilesState extends State<InfoTiles> {
         widget.title,
         style: TextStyle(
           fontWeight: FontWeight.w600,
-          color: Colors.black,
+          color: Theme.of(context).colorScheme.primary,
         ),
       ),
       subtitle: Text(widget.subtitle,
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            color: Colors.black,
+            color: Theme.of(context).colorScheme.inversePrimary,
           )),
-      tileColor: Colors.yellow, //changes this in future for dark mode
+      tileColor: Theme.of(context).colorScheme.secondary,
       leading: Icon(
         widget.icon,
         size: MediaQuery.of(context).size.width * 0.068,
-        color: Colors.black,
+        color: Theme.of(context).colorScheme.primary,
       ),
     );
   }

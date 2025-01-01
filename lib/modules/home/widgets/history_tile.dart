@@ -23,26 +23,26 @@ class _HistoryTileState extends State<HistoryTile> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.0),
         ),
-        tileColor: Colors.yellow, //changes this in future for dark mode
+        tileColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           widget.name,
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            color: Colors.black,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
         subtitle: Text(
           widget.description,
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            color: Colors.black,
+            color: Theme.of(context).colorScheme.inversePrimary,
           ),
         ),
         trailing: Text(
           widget.price.toString(),
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            color: Colors.black,
+            color: Colors.green,
           ),
         ),
       ),

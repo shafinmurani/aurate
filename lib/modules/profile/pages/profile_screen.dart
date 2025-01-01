@@ -1,6 +1,5 @@
 import 'package:aurate/export.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,17 +14,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           "Profile",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              //settings page goes here
+              context.go('/setting');
             },
           )
         ],
@@ -89,14 +91,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   "Logout",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: Colors.black,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
-
-                tileColor: Colors.yellow, //changes this in future for dark mode
-                leading: const Icon(
+                tileColor: Theme.of(context).colorScheme.secondary,
+                leading: Icon(
                   Icons.logout,
-                  color: Colors.black,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ],

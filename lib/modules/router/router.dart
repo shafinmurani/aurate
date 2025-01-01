@@ -13,6 +13,10 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
           builder: (context, state) {
             return History();
           },
-        )
+        ),
+        GoRoute(
+          path: '/setting',
+          builder: (context, state) => SettingScreen(),
+        ),
       ]),
 ]);

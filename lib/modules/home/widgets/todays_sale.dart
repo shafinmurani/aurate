@@ -14,7 +14,7 @@ class _TodaysSaleState extends State<TodaysSale> {
       width: double.infinity,
       height: 120.0,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.secondary,
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
@@ -27,14 +27,14 @@ class _TodaysSaleState extends State<TodaysSale> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
-                color: Colors.black,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             Text('[price]',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Colors.black,
+                  color: Theme.of(context).colorScheme.inversePrimary,
                 )),
           ],
         ),
