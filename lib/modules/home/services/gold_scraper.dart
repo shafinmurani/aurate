@@ -30,7 +30,9 @@ class GoldRateScraper {
         final text = div.text.trim().replaceAll(RegExp(r'\s+'), ' ').split(' ');
 
         // Extract rate (removing ₹ symbol)
-        final rateStr = text[5].replaceAll('\'24₹', '');
+        final currentYear = DateTime.now().year.toString().split('');
+        final rateStr =
+            text[5].replaceAll('\'${currentYear[2]}${currentYear.last}₹', '');
         final rate = double.parse(rateStr);
 
         // Extract fluctuation (removing parentheses)

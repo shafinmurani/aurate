@@ -1,5 +1,8 @@
 import 'package:aurate/export.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -38,17 +41,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
               CircleAvatar(
                 radius: 60,
                 backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'),
+                    "${FirebaseAuth.instance.currentUser?.photoURL}"),
               ),
               InfoTiles(
                 icon: Icons.person,
                 title: "Username",
-                subtitle: "[name]",
+                subtitle: "${FirebaseAuth.instance.currentUser?.displayName}",
               ),
               InfoTiles(
                 icon: Icons.email,
                 title: "Email",
-                subtitle: "[email]",
+                subtitle: "${FirebaseAuth.instance.currentUser?.email}",
               ),
               InfoTiles(
                 icon: Icons.add_business,
@@ -56,6 +59,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 subtitle: "[organization]",
               ),
               ListTile(
+                onTap: () {
+                  DialogBuilder.build(
+                    context,
+                    title: "Are you sure?",
+                    content:
+                        "This action will log you out of the current session",
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          context.pop();
+                        },
+                        child: Text("Cancel"),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          context.pop();
+                          AuthServices.signOut();
+                        },
+                        child: Text("Continue"),
+                      ),
+                    ],
+                  );
+                },
                 contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16.0)),

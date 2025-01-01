@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthServices {
-  Future<dynamic> googleSigIn() async {
+  static Future<dynamic> googleSigIn() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -21,7 +21,7 @@ class AuthServices {
     }
   }
 
-  Future<bool> signOut() async {
+  static Future<bool> signOut() async {
     try {
       await FirebaseAuth.instance.signOut();
       return true;

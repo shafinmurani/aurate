@@ -10,7 +10,7 @@ class NavigationWrapper extends StatefulWidget {
 
 class _NavigationWrapperState extends State<NavigationWrapper> {
   //TODO: Add screens here when updated
-  List<Widget> screens = [Homescreen(), History(), ProfileScreen()];
+  List<Widget> screens = [Homescreen(), Placeholder(), ProfileScreen()];
   int widgetIndex = 0;
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../export.dart';
 
 class Homescreen extends StatefulWidget {
@@ -28,7 +29,9 @@ class _HomescreenState extends State<Homescreen> {
             padding: const EdgeInsets.all(8.0),
             child: IconButton(
               icon: const Icon(Icons.history),
-              onPressed: () {},
+              onPressed: () {
+                context.go('/history');
+              },
               iconSize: 28.0,
             ),
           ),
