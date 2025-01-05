@@ -109,7 +109,7 @@ class _GoldJeweleryState extends State<GoldJewelery> {
                                       finalMkgChargesController,
                                   finalPriceController: finalPriceController);
                             },
-                            items: <String>["Percentage", "Per Gram", "Manual"]
+                            items: <String>["Percentage", "Per Gram", "Lump sum"]
                                 .map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
@@ -118,7 +118,7 @@ class _GoldJeweleryState extends State<GoldJewelery> {
                             }).toList(),
                           ),
                           const Gap(15),
-                          mkgChargesType == "Manual"
+                          mkgChargesType == "Lump sum"
                               ? Container()
                               : InputField(
                                   label: 'Making Charges ($mkgChargesType)',
@@ -141,7 +141,7 @@ class _GoldJeweleryState extends State<GoldJewelery> {
                                   controller: mkgChargesController,
                                   keyboardType: TextInputType.number,
                                 ),
-                          Gap(mkgChargesType == "Manual" ? 0 : 15),
+                          Gap(mkgChargesType == "Lump sum" ? 0 : 15),
                           InputField(
                             enabled: false,
                             prefix: Padding(
@@ -157,9 +157,22 @@ class _GoldJeweleryState extends State<GoldJewelery> {
                           ),
                           const Gap(15),
                           InputField(
-                            enabled: mkgChargesType == "Manual" ? true : false,
+                            enabled: mkgChargesType == "Lump sum" ? true : false,
                             label: 'Final making Charges',
                             suffix: Text("₹"),
+                            onChanged: (value){
+                              GoldCalculate.calculateAll(
+                                        sRate: rateController.text,
+                                        sWeight: weightController.text,
+                                        sMakingCharges:
+                                            mkgChargesController.text,
+                                        gstController: gstController,
+                                        mkgChargesType: mkgChargesType,
+                                        finalMkgChargesController:
+                                            finalMkgChargesController,
+                                        finalPriceController:
+                                            finalPriceController);
+                            },
                             controller: finalMkgChargesController,
                             keyboardType: TextInputType.number,
                           ),
