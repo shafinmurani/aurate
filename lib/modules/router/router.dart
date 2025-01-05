@@ -15,6 +15,18 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
           },
         ),
         GoRoute(
+          path: '/gold-coin',
+          builder: (context, state) {
+            return GoldCoin();
+          },
+        ),
+        GoRoute(
+          path: '/gold-jewellery',
+          builder: (context, state) {
+            return GoldJewelery();
+          },
+        ),
+        GoRoute(
           path: '/setting',
           builder: (context, state) => SettingScreen(),
         ),
